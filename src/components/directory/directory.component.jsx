@@ -8,8 +8,8 @@ import { createStructuredSelector } from "reselect";
 const Directory = ({ sections }) => (
     <div className="directory-menu">
         {
-            sections.map(({ title, imageUrl, id, size }) => (
-                <MenuItem title={title} key={id} imageUrl={imageUrl} size={size}/>
+            sections.map(({id, ...otherProps}) => (
+                <MenuItem key={id} {...otherProps}/>
             ))
         }
     </div>
