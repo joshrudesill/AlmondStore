@@ -3,7 +3,7 @@ import { firestore } from "../../firebase/firebase.utils";
 import { convertCollectionsSnapshotToMap } from "../../firebase/firebase.utils";
 
 export const fetchCollectionsStart = () => ({
-    type: ShopActionTypes.UPDATE_COLLECTIONS
+    type: ShopActionTypes.FETCH_COLLECTIONS_START
 });
 export const fetchCollectionsSuccess = collectionsMap => ({
     type: ShopActionTypes.FETCH_COLLECTIONS_SUCCESS,

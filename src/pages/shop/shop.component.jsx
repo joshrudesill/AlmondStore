@@ -18,7 +18,8 @@ class ShopPage extends React.Component {
   }
 
   render () {
-    const { match, isCollectionFetching, isCollectionsLoaded } = this.props; 
+    const { match, isCollectionFetching, isCollectionsLoaded } = this.props;
+    console.log(isCollectionFetching);
     return (
       <div className='shop-page'>
         <Route exact path={`${match.path}`} render={(props) => <CollectionOverViewWithSpinner isLoading={ isCollectionFetching } {...props}/>} />
@@ -28,13 +29,13 @@ class ShopPage extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
+const mapState = createStructuredSelector({
   isCollectionFetching: selectIsCollectionFetching,
   isCollectionsLoaded: isCollectionsLoaded
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatch = dispatch => ({
   fetchCollectionsStartAsync: () => dispatch(fetchCollectionsStartAsync())
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ShopPage);
+export default connect(mapState, mapDispatch)(ShopPage);

@@ -30,8 +30,8 @@ const Cart = ({ cartItems, history, dispatch }) => (
     </div>
 )
 
-const mapStateToProps = createStructuredSelector ({
+const mapState = createStructuredSelector ({
     cartItems: selectCartItems
 });
 
-export default withRouter(connect(mapStateToProps)(Cart));
+export default withRouter(connect(mapState)(Cart));

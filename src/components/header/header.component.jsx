@@ -37,10 +37,10 @@ const Header = ({ currentUser, showCart }) => (
     </div>
 )
 
-const mapStateToProps = createStructuredSelector({
+const mapState = createStructuredSelector({
     currentUser: selectCurrentUser,
     showCart: selectCartHidden
 })
 
 
-export default connect(mapStateToProps)(Header);
+export default connect(mapState)(Header);

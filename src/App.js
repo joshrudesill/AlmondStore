@@ -57,12 +57,12 @@ class App extends React.Component {
   }
 }
 
-const mapStateToProps = createStructuredSelector({
+const mapState = createStructuredSelector({
   currentUser: selectCurrentUser,
 })
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatch = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user)),
 })
 
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapState, mapDispatch)(App);
